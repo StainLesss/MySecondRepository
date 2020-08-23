@@ -6,19 +6,19 @@ pipeline{
     timeout(time : 1, unit :'HOURS')
   }
   stages{
-    stages("Build"){
+    stage("Build"){
       steps{
         echo "Build no ${BUILD_ID}, made at ${WORKSPACE}"
         bat 'javac Main.java'
       }
     }
-    stages("Test"){
+    stage("Test"){
       steps{
         echo "some test mnipulaiton"
         bat 'java Main'
       }
     }
-    stages("Deploy"){
+    stage("Deploy"){
       steps{
         echo "Should be working"
       }
